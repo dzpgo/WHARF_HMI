@@ -1,0 +1,308 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="f.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <ProjectGuid>7190f358-9811-47ba-b069-c13ca029f748</ProjectGuid>
+    <!-- update GUID here -->
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace />
+    <!-- update root namespace -->
+    <AssemblyName>Baosight.iSuperframe.Common.1.0.0.0.Fakes</AssemblyName>
+    <!-- update assembly name -->
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <OutputPath>b</OutputPath>
+    <IntermediateOutputPath>o</IntermediateOutputPath>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE;$(CommonDefineConstants)</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>$(OutputPath)\$(AssemblyName).xml</DocumentationFile>
+    <NoWarn>1587;1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE;$(CommonDefineConstants)</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>$(OutputPath)\$(AssemblyName).xml</DocumentationFile>
+    <NoWarn>1587;1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes">
+      <HintPath>D:\iPlature\SF_HOME\app\form\Microsoft.QualityTools.Testing.Fakes.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Aliases>mqttf</Aliases>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Common">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Common.dll</HintPath>
+      <Aliases>bsc</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>C:\iPlature\SF_HOME\app\form\System.Data.dll</HintPath>
+      <Aliases>global</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\iPlature\SF_HOME\app\form\System.dll</HintPath>
+      <Aliases>global</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>C:\iPlature\SF_HOME\app\form\System.Xml.dll</HintPath>
+      <Aliases>global</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\iPlature\SF_HOME\app\form\System.Windows.Forms.dll</HintPath>
+      <Aliases>swf</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+      <Aliases>mpell</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Aliases>mpelc</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <HintPath>C:\iPlature\SF_HOME\app\form\System.Configuration.dll</HintPath>
+      <Aliases>global</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Exceptions">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Exceptions.dll</HintPath>
+      <Aliases>bse</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>C:\iPlature\SF_HOME\app\form\System.Drawing.dll</HintPath>
+      <Aliases>global</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="C1.Win.C1Ribbon.2">
+      <HintPath>C:\iPlature\SF_HOME\app\form\C1.Win.C1Ribbon.2.dll</HintPath>
+      <Aliases>c1wc1r2</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="C1.Win.C1Command.2">
+      <HintPath>C:\iPlature\SF_HOME\app\form\C1.Win.C1Command.2.dll</HintPath>
+      <Aliases>c1wc1c2</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="C1.Win.C1Input.2">
+      <HintPath>C:\iPlature\SF_HOME\app\form\C1.Win.C1Input.2.dll</HintPath>
+      <Aliases>c1wc1i2</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.2">
+      <HintPath>C:\iPlature\SF_HOME\app\form\C1.Win.C1FlexGrid.2.dll</HintPath>
+      <Aliases>c1wc1fg2</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Management">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Management.dll</HintPath>
+      <Aliases>sm</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Npgsql.dll</HintPath>
+      <Aliases>n</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Logging">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Logging.dll</HintPath>
+      <Aliases>bsl</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="IBM.Data.DB2">
+      <HintPath>C:\iPlature\SF_HOME\app\form\IBM.Data.DB2.dll</HintPath>
+      <Aliases>ibmddb2</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.OracleClient.dll</HintPath>
+      <Aliases>sdoc</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.iPlatureServer">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.iPlatureServer.dll</HintPath>
+      <Aliases>bsps</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.RBAC">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.RBAC.dll</HintPath>
+      <Aliases>brbac</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Controls">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Controls.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Core">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Core.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Forms">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Forms.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.MsgService">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.MsgService.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.MsgService.Interface">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.MsgService.Interface.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Controls">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.TagService.Controls.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Interface">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.TagService.Interface.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MODULES_OF_PREMIERE">
+      <HintPath>C:\iPlature\SF_HOME\app\form\MODULES_OF_PREMIERE.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.DataSetExtensions.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Xml.Linq.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="UACSUtility">
+      <HintPath>C:\iPlature\SF_HOME\app\form\UACSUtility.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Utility">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Utility.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.DBServer">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.DBServer.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>C:\iPlature\SF_HOME\app\form\System.Data.SQLite.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.Resources">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.Resources.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Main">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Main.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Ice">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Ice.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="C1.Win.C1Chart.2">
+      <HintPath>C:\iPlature\SF_HOME\app\form\C1.Win.C1Chart.2.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Authorization.Interface">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Authorization.Interface.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Messaging">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Messaging.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.EnterpriseServices.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Configuration.Install">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Configuration.Install.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Design">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Design.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Web">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Web.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Drawing.Design.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.Entity.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Transactions.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Mono.Security.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>C:\iPlature\SF_HOME\app\form\log4net.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="IceStorm">
+      <HintPath>C:\iPlature\SF_HOME\app\form\IceStorm.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="IceGrid">
+      <HintPath>C:\iPlature\SF_HOME\app\form\IceGrid.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Data.ConnectionUI">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Microsoft.Data.ConnectionUI.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Data.ConnectionUI.Dialog">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Microsoft.Data.ConnectionUI.Dialog.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="C1.Win.C1Sizer.2">
+      <HintPath>C:\iPlature\SF_HOME\app\form\C1.Win.C1Sizer.2.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Glacier2">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Glacier2.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
