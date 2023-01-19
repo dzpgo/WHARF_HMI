@@ -87,3 +87,12 @@ E:\代码\码头库画面\wuliubu_chenpinmatou\UACSHMI_MAIN\UACSDAL\obj\Debug\UA
 E:\代码\码头库画面\wuliubu_chenpinmatou\UACSHMI_MAIN\UACSDAL\obj\Debug\UACSDAL.csproj.CopyComplete
 E:\代码\码头库画面\wuliubu_chenpinmatou\UACSHMI_MAIN\UACSDAL\obj\Debug\UACSDAL.dll
 E:\代码\码头库画面\wuliubu_chenpinmatou\UACSHMI_MAIN\UACSDAL\obj\Debug\UACSDAL.pdb
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\UACSDAL\bin\Debug\UACSDAL.dll
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\UACSDAL\bin\Debug\UACSDAL.pdb
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\UACSDAL\bin\Debug\Baosight.iSuperframe.DBServer.dll
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\UACSDAL\bin\Debug\IBM.Data.DB2.dll
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\UACSDAL\obj\Debug\UACSDAL.csproj.AssemblyReference.cache
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\UACSDAL\obj\Debug\UACSDAL.csproj.CoreCompileInputs.cache
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\UACSDAL\obj\Debug\UACSDAL.csproj.CopyComplete
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\UACSDAL\obj\Debug\UACSDAL.dll
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\UACSDAL\obj\Debug\UACSDAL.pdb

@@ -1,0 +1,10 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/UACSHMI_MAIN/Inventory/bin/Debug/Baosight.iSuperframe.Authorization.Interface.dll
+/UACSHMI_MAIN/.vs/UACSHMI/FileContentIndex/afe51d7a-c5d1-4bfd-8a7c-3283cca9958c.vsidx
+/UACSHMI_MAIN/.vs/UACSHMI/FileContentIndex/abaa888c-accf-42d7-8ad4-4c98bae0dfeb.vsidx
+/UACSHMI_MAIN/.vs/UACSHMI/FileContentIndex/532a78d9-30ab-438d-9641-53f75b8ed32e.vsidx
+/UACSHMI_MAIN/.vs/UACSHMI/FileContentIndex/4f9cd362-c843-48d9-a40f-3e898265b6ad.vsidx
+/UACSHMI_MAIN/Inventory/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache

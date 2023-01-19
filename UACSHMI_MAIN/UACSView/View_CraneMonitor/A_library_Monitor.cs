@@ -288,6 +288,23 @@ namespace UACSView.View_CraneMonitor
                 //getWaterStatus("3_2");
                 //getWaterStatus("3_3");//先不用
 
+                if (Crane_1.Equals(1))
+                {
+                    conCrane1_1.BackColor = System.Drawing.Color.Orange;
+                }
+                if (Crane_2.Equals(1))
+                {
+                    conCrane1_2.BackColor = System.Drawing.Color.Orange;
+                }
+                if (Crane_3.Equals(1))
+                {
+                    conCrane1_3.BackColor = System.Drawing.Color.Orange;
+                }
+                if (Crane_4.Equals(1))
+                {
+                    conCrane1_4.BackColor = System.Drawing.Color.Orange;
+                }               
+                
                 //conCrane1_1.BackColor = AreaInStockZ12.updataCraneWaterLevel(craneNo_1_1) ? Color.Orange : SystemColors.Control;
                 //conCrane1_2.BackColor = AreaInStockZ12.updataCraneWaterLevel(craneNo_1_2) ? Color.Orange : SystemColors.Control;
                 //conCrane1_3.BackColor = AreaInStockZ12.updataCraneWaterLevel(craneNo_1_3) ? Color.Orange : SystemColors.Control;
@@ -370,7 +387,7 @@ namespace UACSView.View_CraneMonitor
                 }
                 else if (areaModel.updataCraneWaterLevel(conCraneVisual.CraneNO))
                 {
-                    conCraneVisual.BackColor = Color.Red;
+                    //conCraneVisual.BackColor = Color.Red;
                 }
                 else
                 {
@@ -386,7 +403,7 @@ namespace UACSView.View_CraneMonitor
                 }
                 else if (areaModel.updataCraneWaterLevel(conCraneVisual.CraneNO))
                 {
-                    conCraneVisual.BackColor = Color.Red;
+                    //conCraneVisual.BackColor = Color.Red;
                 }
                 else
                 {
@@ -745,6 +762,10 @@ namespace UACSView.View_CraneMonitor
 
         #region 检修时更改行车背景颜色
 
+        private int Crane_1 = 0;
+        private int Crane_2 = 0;
+        private int Crane_3 = 0;
+        private int Crane_4 = 0;
         /// <summary>
         /// 检修
         /// </summary>
@@ -764,19 +785,23 @@ namespace UACSView.View_CraneMonitor
         {
             if (CraneNO.Equals("1"))
             {
-                this.conCrane1_1.BackColor = System.Drawing.Color.Red;
+                this.conCrane1_1.BackColor = System.Drawing.Color.Orange;
+                Crane_1 = 1;
             }
             else if (CraneNO.Equals("2"))
             {
-                this.conCrane1_2.BackColor = System.Drawing.Color.Red;
+                this.conCrane1_2.BackColor = System.Drawing.Color.Orange;
+                Crane_2 = 1;
             }
             else if (CraneNO.Equals("3"))
             {
-                this.conCrane1_3.BackColor = System.Drawing.Color.Red;
+                this.conCrane1_3.BackColor = System.Drawing.Color.Orange;
+                Crane_3 = 1;
             }
             else if (CraneNO.Equals("4"))
             {
-                this.conCrane1_4.BackColor = System.Drawing.Color.Red;
+                this.conCrane1_4.BackColor = System.Drawing.Color.Orange;
+                Crane_4 = 1;
             }
         }
         /// <summary>
@@ -788,18 +813,22 @@ namespace UACSView.View_CraneMonitor
             if (CraneNO.Equals("1"))
             {
                 this.conCrane1_1.BackColor = System.Drawing.SystemColors.Control;
+                Crane_1 = 0;
             }
             else if (CraneNO.Equals("2"))
             {
                 this.conCrane1_2.BackColor = System.Drawing.SystemColors.Control;
+                Crane_2 = 0;
             }
             else if (CraneNO.Equals("3"))
             {
                 this.conCrane1_3.BackColor = System.Drawing.SystemColors.Control;
+                Crane_3 = 0;
             }
             else if (CraneNO.Equals("4"))
             {
-                this.conCrane1_3.BackColor = System.Drawing.SystemColors.Control;
+                this.conCrane1_4.BackColor = System.Drawing.SystemColors.Control;
+                Crane_4 = 0;
             }
         }
         #endregion

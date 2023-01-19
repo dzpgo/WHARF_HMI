@@ -62,3 +62,9 @@ E:\代码\码头库画面\wuliubu_chenpinmatou\UACSHMI_MAIN\ParkingControlLibrar
 E:\代码\码头库画面\wuliubu_chenpinmatou\UACSHMI_MAIN\ParkingControlLibrary\obj\Debug\ParkingControlLibrary.csproj.CoreCompileInputs.cache
 E:\代码\码头库画面\wuliubu_chenpinmatou\UACSHMI_MAIN\ParkingControlLibrary\obj\Debug\ParkingControlLibrary.dll
 E:\代码\码头库画面\wuliubu_chenpinmatou\UACSHMI_MAIN\ParkingControlLibrary\obj\Debug\ParkingControlLibrary.pdb
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\ParkingControlLibrary\obj\Debug\ParkingControlLibrary.csproj.AssemblyReference.cache
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\ParkingControlLibrary\obj\Debug\ParkingControlLibrary.ParkingState.resources
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\ParkingControlLibrary\obj\Debug\ParkingControlLibrary.csproj.GenerateResource.cache
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\ParkingControlLibrary\obj\Debug\ParkingControlLibrary.csproj.CoreCompileInputs.cache
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\ParkingControlLibrary\obj\Debug\ParkingControlLibrary.dll
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\ParkingControlLibrary\obj\Debug\ParkingControlLibrary.pdb
