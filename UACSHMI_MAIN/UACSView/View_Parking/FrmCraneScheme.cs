@@ -32,7 +32,7 @@ namespace UACSView
             GetYradToCar(cbbCraneNo.Text.Trim());
             GetCurrentTypeMessage();
             ShiftDgvColorByFlag();
-        } 
+        }
         #endregion
 
         #region comBobox切换
@@ -50,7 +50,7 @@ namespace UACSView
             GetYradToCar(cbbCraneNo.Text.Trim());
             GetCurrentTypeMessage();
             ShiftDgvColorByFlag();
-        } 
+        }
         #endregion
 
         #region 类型切换
@@ -120,7 +120,7 @@ namespace UACSView
             if (radioButton6.Checked)
                 GetAreaToYrad(cbbCraneNo.Text.Trim(), 5);
             ShiftDgvColorByFlag();
-        } 
+        }
         #endregion
 
         #region 点击查询区域信息
@@ -164,12 +164,14 @@ namespace UACSView
                     GetArea(CarToYardAreaID.ToString());
                 }
             }
-        } 
+        }
         #endregion
 
-        #region 修改范围配置
+        #region 修改范围配置        
+
         private void AreaToYardUpConfig_Click(object sender, EventArgs e)
         {
+
             if (cbbCraneNo.Text.Trim() != "")
             {
                 int index = dgvAreaToYard.CurrentRow.Index;
@@ -193,6 +195,7 @@ namespace UACSView
                     ShiftDgvColorByFlag();
                 }
             }
+
         }
 
         private void YardToCarUpConfig_Click(object sender, EventArgs e)
@@ -219,7 +222,8 @@ namespace UACSView
                     GetYradToCar(cbbCraneNo.Text.Trim());
                 }
             }
-        } 
+        }
+
         #endregion
 
         #region 打开关闭所有配置
@@ -265,7 +269,7 @@ namespace UACSView
                 MessageBox.Show(er.Message);
             }
         }
-        
+
         #endregion
 
         #endregion
@@ -545,7 +549,7 @@ namespace UACSView
 
                 throw;
             }
-        } 
+        }
 
 
         /// <summary>
@@ -554,15 +558,15 @@ namespace UACSView
         /// </summary>
         /// <param name="_id"></param>
         /// <returns></returns>
-        private bool UpCarToYardByFlag(string _craneNo,string _id,bool _isFlag)
+        private bool UpCarToYardByFlag(string _craneNo, string _id, bool _isFlag)
         {
             string sql = string.Empty;
             try
-            {              
+            {
                 if (_isFlag)
                     sql = string.Format("UPDATE CAR_TO_YARD_CRANE_STRAEGY SET FLAG_ENABLED = 1 WHERE CRANE_NO = '{0}' and ID = {1} ", _craneNo, _id);
                 else
-                    sql = string.Format("UPDATE CAR_TO_YARD_CRANE_STRAEGY SET FLAG_ENABLED = 0 WHERE CRANE_NO = '{0}' and ID = {1} ", _craneNo, _id);                
+                    sql = string.Format("UPDATE CAR_TO_YARD_CRANE_STRAEGY SET FLAG_ENABLED = 0 WHERE CRANE_NO = '{0}' and ID = {1} ", _craneNo, _id);
                 DB2Connect.DBHelper.ExecuteNonQuery(sql);
             }
             catch (Exception er)
@@ -781,7 +785,7 @@ namespace UACSView
                 GetYradToCar(cbbCraneNo.Text.Trim());
             }
         }
-        
+
         #endregion
 
     }

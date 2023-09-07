@@ -32,7 +32,7 @@ namespace HMI_OF_CRANEORDERCONFIG
             GetYradToCar(cbbCraneNo.Text.Trim());
             GetCurrentTypeMessage();
             ShiftDgvColorByFlag();
-        } 
+        }
         #endregion
 
         #region comBobox切换
@@ -50,7 +50,7 @@ namespace HMI_OF_CRANEORDERCONFIG
             GetYradToCar(cbbCraneNo.Text.Trim());
             GetCurrentTypeMessage();
             ShiftDgvColorByFlag();
-        } 
+        }
         #endregion
 
         #region 类型切换
@@ -120,7 +120,7 @@ namespace HMI_OF_CRANEORDERCONFIG
             if (radioButton6.Checked)
                 GetAreaToYrad(cbbCraneNo.Text.Trim(), 5);
             ShiftDgvColorByFlag();
-        } 
+        }
         #endregion
 
         #region 点击查询区域信息
@@ -164,62 +164,85 @@ namespace HMI_OF_CRANEORDERCONFIG
                     GetArea(CarToYardAreaID.ToString());
                 }
             }
-        } 
+        }
         #endregion
 
         #region 修改范围配置
+        /// <summary>
+        /// 授权成功 
+        /// </summary>
+        private bool IsAuthority = false;
+        private void ChildForm_DataReturned(object sender, DataReturnedEventArgs e)
+        {
+            IsAuthority = e.IsAuthority;
+            //MessageBox.Show("从子窗体返回的数据：" + IsAuthority, "数据返回", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         private void AreaToYardUpConfig_Click(object sender, EventArgs e)
         {
-            if (cbbCraneNo.Text.Trim() != "")
+            IsAuthority = false;
+            FrmCraneConfigAuthority childForm = new FrmCraneConfigAuthority();
+            childForm.DataReturned += ChildForm_DataReturned; // 订阅子窗体的事件
+            childForm.ShowDialog();
+            if (IsAuthority)
             {
-                int index = dgvAreaToYard.CurrentRow.Index;
-                if (index < 0)
-                    return;
-
-                FrmCraneConfig frm = new FrmCraneConfig();
-                frm.ID = Convert.ToInt32(dgvAreaToYard.Rows[index].Cells["SADDLE_STRATEGY_ID"].Value.ToString());
-                frm.CraneNo = dgvAreaToYard.Rows[index].Cells["CRANE_NO"].Value.ToString();
-                frm.Xmin = Convert.ToInt32(dgvAreaToYard.Rows[index].Cells["X_MIN"].Value.ToString());
-                frm.Xmax = Convert.ToInt32(dgvAreaToYard.Rows[index].Cells["X_MAX"].Value.ToString());
-                frm.Ymin = Convert.ToInt32(dgvAreaToYard.Rows[index].Cells["Y_MIN"].Value.ToString());
-                frm.Ymax = Convert.ToInt32(dgvAreaToYard.Rows[index].Cells["Y_MAX"].Value.ToString());
-                frm.Xdir = dgvAreaToYard.Rows[index].Cells["X_DIR"].Value.ToString();
-                frm.MyCraneConfig = FrmCraneConfig.CraneConfig.CarToYard;
-                DialogResult ret = frm.ShowDialog();
-                if (ret == System.Windows.Forms.DialogResult.OK)
+                if (cbbCraneNo.Text.Trim() != "")
                 {
-                    //暂时关闭这个修改范围的功能
-                    GetCurrentTypeMessage();
-                    ShiftDgvColorByFlag();
+                    int index = dgvAreaToYard.CurrentRow.Index;
+                    if (index < 0)
+                        return;
+
+                    FrmCraneConfig frm = new FrmCraneConfig();
+                    frm.ID = Convert.ToInt32(dgvAreaToYard.Rows[index].Cells["SADDLE_STRATEGY_ID"].Value.ToString());
+                    frm.CraneNo = dgvAreaToYard.Rows[index].Cells["CRANE_NO"].Value.ToString();
+                    frm.Xmin = Convert.ToInt32(dgvAreaToYard.Rows[index].Cells["X_MIN"].Value.ToString());
+                    frm.Xmax = Convert.ToInt32(dgvAreaToYard.Rows[index].Cells["X_MAX"].Value.ToString());
+                    frm.Ymin = Convert.ToInt32(dgvAreaToYard.Rows[index].Cells["Y_MIN"].Value.ToString());
+                    frm.Ymax = Convert.ToInt32(dgvAreaToYard.Rows[index].Cells["Y_MAX"].Value.ToString());
+                    frm.Xdir = dgvAreaToYard.Rows[index].Cells["X_DIR"].Value.ToString();
+                    frm.MyCraneConfig = FrmCraneConfig.CraneConfig.CarToYard;
+                    DialogResult ret = frm.ShowDialog();
+                    if (ret == System.Windows.Forms.DialogResult.OK)
+                    {
+                        //暂时关闭这个修改范围的功能
+                        GetCurrentTypeMessage();
+                        ShiftDgvColorByFlag();
+                    }
                 }
             }
         }
 
         private void YardToCarUpConfig_Click(object sender, EventArgs e)
         {
-            if (cbbCraneNo.Text.Trim() != "")
+            IsAuthority = false;
+            FrmCraneConfigAuthority childForm = new FrmCraneConfigAuthority();
+            childForm.DataReturned += ChildForm_DataReturned; // 订阅子窗体的事件
+            childForm.ShowDialog();
+            if (IsAuthority)
             {
-                int index = dgvYardToCar.CurrentRow.Index;
-                if (index < 0)
-                    return;
-
-                FrmCraneConfig frm = new FrmCraneConfig();
-                frm.ID = Convert.ToInt32(dgvYardToCar.Rows[index].Cells["yardToCar_COIL_STRATEGY_ID"].Value.ToString());
-                frm.CraneNo = dgvYardToCar.Rows[index].Cells["yardToCar_CRANE_NO"].Value.ToString();
-                frm.Xmin = Convert.ToInt32(dgvYardToCar.Rows[index].Cells["yardToCar_X_MIN"].Value.ToString());
-                frm.Xmax = Convert.ToInt32(dgvYardToCar.Rows[index].Cells["yardToCar_X_MAX"].Value.ToString());
-                frm.Ymin = Convert.ToInt32(dgvYardToCar.Rows[index].Cells["yardToCar_Y_MIN"].Value.ToString());
-                frm.Ymax = Convert.ToInt32(dgvYardToCar.Rows[index].Cells["yardToCar_Y_MAX"].Value.ToString());
-                frm.Xdir = dgvYardToCar.Rows[index].Cells["yardToCar_X_DIR"].Value.ToString();
-                frm.MyCraneConfig = FrmCraneConfig.CraneConfig.YardToCar;
-                DialogResult ret = frm.ShowDialog();
-                if (ret == System.Windows.Forms.DialogResult.OK)
+                if (cbbCraneNo.Text.Trim() != "")
                 {
-                    //暂时关闭这个修改范围的功能
-                    GetYradToCar(cbbCraneNo.Text.Trim());
+                    int index = dgvYardToCar.CurrentRow.Index;
+                    if (index < 0)
+                        return;
+
+                    FrmCraneConfig frm = new FrmCraneConfig();
+                    frm.ID = Convert.ToInt32(dgvYardToCar.Rows[index].Cells["yardToCar_COIL_STRATEGY_ID"].Value.ToString());
+                    frm.CraneNo = dgvYardToCar.Rows[index].Cells["yardToCar_CRANE_NO"].Value.ToString();
+                    frm.Xmin = Convert.ToInt32(dgvYardToCar.Rows[index].Cells["yardToCar_X_MIN"].Value.ToString());
+                    frm.Xmax = Convert.ToInt32(dgvYardToCar.Rows[index].Cells["yardToCar_X_MAX"].Value.ToString());
+                    frm.Ymin = Convert.ToInt32(dgvYardToCar.Rows[index].Cells["yardToCar_Y_MIN"].Value.ToString());
+                    frm.Ymax = Convert.ToInt32(dgvYardToCar.Rows[index].Cells["yardToCar_Y_MAX"].Value.ToString());
+                    frm.Xdir = dgvYardToCar.Rows[index].Cells["yardToCar_X_DIR"].Value.ToString();
+                    frm.MyCraneConfig = FrmCraneConfig.CraneConfig.YardToCar;
+                    DialogResult ret = frm.ShowDialog();
+                    if (ret == System.Windows.Forms.DialogResult.OK)
+                    {
+                        //暂时关闭这个修改范围的功能
+                        GetYradToCar(cbbCraneNo.Text.Trim());
+                    }
                 }
             }
-        } 
+        }
         #endregion
 
         #region 打开关闭所有配置
@@ -227,16 +250,23 @@ namespace HMI_OF_CRANEORDERCONFIG
         {
             try
             {
-                for (int i = 0; i < dgvAreaToYard.Rows.Count; i++)
+                IsAuthority = false;
+                FrmCraneConfigAuthority childForm = new FrmCraneConfigAuthority();
+                childForm.DataReturned += ChildForm_DataReturned; // 订阅子窗体的事件
+                childForm.ShowDialog();
+                if (IsAuthority)
                 {
-                    if (dgvAreaToYard.Rows[i].Cells["ID"].Value != DBNull.Value)
+                    for (int i = 0; i < dgvAreaToYard.Rows.Count; i++)
                     {
-                        string id = dgvAreaToYard.Rows[i].Cells["ID"].Value.ToString();
-                        bool flag = UpAreaToYardByFlag(cbbCraneNo.Text.Trim(), id.ToString(), false);
+                        if (dgvAreaToYard.Rows[i].Cells["ID"].Value != DBNull.Value)
+                        {
+                            string id = dgvAreaToYard.Rows[i].Cells["ID"].Value.ToString();
+                            bool flag = UpAreaToYardByFlag(cbbCraneNo.Text.Trim(), id.ToString(), false);
+                        }
                     }
+                    GetCurrentTypeMessage();
+                    ShiftDgvColorByFlag();
                 }
-                GetCurrentTypeMessage();
-                ShiftDgvColorByFlag();
             }
             catch (Exception er)
             {
@@ -249,23 +279,30 @@ namespace HMI_OF_CRANEORDERCONFIG
         {
             try
             {
-                for (int i = 0; i < dgvAreaToYard.Rows.Count; i++)
+                IsAuthority = false;
+                FrmCraneConfigAuthority childForm = new FrmCraneConfigAuthority();
+                childForm.DataReturned += ChildForm_DataReturned; // 订阅子窗体的事件
+                childForm.ShowDialog();
+                if (IsAuthority)
                 {
-                    if (dgvAreaToYard.Rows[i].Cells["ID"].Value != DBNull.Value)
+                    for (int i = 0; i < dgvAreaToYard.Rows.Count; i++)
                     {
-                        string id = dgvAreaToYard.Rows[i].Cells["ID"].Value.ToString();
-                        bool flag = UpAreaToYardByFlag(cbbCraneNo.Text.Trim(), id.ToString(), true);
+                        if (dgvAreaToYard.Rows[i].Cells["ID"].Value != DBNull.Value)
+                        {
+                            string id = dgvAreaToYard.Rows[i].Cells["ID"].Value.ToString();
+                            bool flag = UpAreaToYardByFlag(cbbCraneNo.Text.Trim(), id.ToString(), true);
+                        }
                     }
+                    GetCurrentTypeMessage();
+                    ShiftDgvColorByFlag();
                 }
-                GetCurrentTypeMessage();
-                ShiftDgvColorByFlag();
             }
             catch (Exception er)
             {
                 MessageBox.Show(er.Message);
             }
         }
-        
+
         #endregion
 
         #endregion
@@ -549,7 +586,7 @@ namespace HMI_OF_CRANEORDERCONFIG
 
                 throw;
             }
-        } 
+        }
 
 
         /// <summary>
@@ -558,15 +595,15 @@ namespace HMI_OF_CRANEORDERCONFIG
         /// </summary>
         /// <param name="_id"></param>
         /// <returns></returns>
-        private bool UpCarToYardByFlag(string _craneNo,string _id,bool _isFlag)
+        private bool UpCarToYardByFlag(string _craneNo, string _id, bool _isFlag)
         {
             string sql = string.Empty;
             try
-            {              
+            {
                 if (_isFlag)
                     sql = string.Format("UPDATE CAR_TO_YARD_CRANE_STRAEGY SET FLAG_ENABLED = 1 WHERE CRANE_NO = '{0}' and ID = {1} ", _craneNo, _id);
                 else
-                    sql = string.Format("UPDATE CAR_TO_YARD_CRANE_STRAEGY SET FLAG_ENABLED = 0 WHERE CRANE_NO = '{0}' and ID = {1} ", _craneNo, _id);                
+                    sql = string.Format("UPDATE CAR_TO_YARD_CRANE_STRAEGY SET FLAG_ENABLED = 0 WHERE CRANE_NO = '{0}' and ID = {1} ", _craneNo, _id);
                 DB2Connect.DBHelper.ExecuteNonQuery(sql);
             }
             catch (Exception er)
@@ -676,39 +713,53 @@ namespace HMI_OF_CRANEORDERCONFIG
         #region 配置ID状态切换
         private void AreaToYardByStop_Click(object sender, EventArgs e)
         {
-            if (cbbCraneNo.Text.Trim() != "")
+            IsAuthority = false;
+            FrmCraneConfigAuthority childForm = new FrmCraneConfigAuthority();
+            childForm.DataReturned += ChildForm_DataReturned; // 订阅子窗体的事件
+            childForm.ShowDialog();
+            if (IsAuthority)
             {
-                int index = dgvAreaToYard.CurrentRow.Index;
-                if (index < 0)
-                    return;
-                string id = dgvAreaToYard.Rows[index].Cells["ID"].Value.ToString();
-                bool flag = UpAreaToYardByFlag(cbbCraneNo.Text.Trim(), id.ToString(), false);
-                if (flag)
-                    MessageBox.Show(id + "配载方案停止成功");
-                else
-                    MessageBox.Show(id + "配载方案停止失败");
+                if (cbbCraneNo.Text.Trim() != "")
+                {
+                    int index = dgvAreaToYard.CurrentRow.Index;
+                    if (index < 0)
+                        return;
+                    string id = dgvAreaToYard.Rows[index].Cells["ID"].Value.ToString();
+                    bool flag = UpAreaToYardByFlag(cbbCraneNo.Text.Trim(), id.ToString(), false);
+                    if (flag)
+                        MessageBox.Show(id + "配载方案停止成功");
+                    else
+                        MessageBox.Show(id + "配载方案停止失败");
 
-                GetCurrentTypeMessage();
-                ShiftDgvColorByFlag();
+                    GetCurrentTypeMessage();
+                    ShiftDgvColorByFlag();
+                }
             }
         }
 
         private void AreaToYardByOpen_Click(object sender, EventArgs e)
         {
-            if (cbbCraneNo.Text.Trim() != "")
+            IsAuthority = false;
+            FrmCraneConfigAuthority childForm = new FrmCraneConfigAuthority();
+            childForm.DataReturned += ChildForm_DataReturned; // 订阅子窗体的事件
+            childForm.ShowDialog();
+            if (IsAuthority)
             {
-                int index = dgvAreaToYard.CurrentRow.Index;
-                if (index < 0)
-                    return;
-                string id = dgvAreaToYard.Rows[index].Cells["ID"].Value.ToString();
-                bool flag = UpAreaToYardByFlag(cbbCraneNo.Text.Trim(), id.ToString(), true);
-                if (flag)
-                    MessageBox.Show(id + "配载方案打开成功");
-                else
-                    MessageBox.Show(id + "配载方案打开失败");
+                if (cbbCraneNo.Text.Trim() != "")
+                {
+                    int index = dgvAreaToYard.CurrentRow.Index;
+                    if (index < 0)
+                        return;
+                    string id = dgvAreaToYard.Rows[index].Cells["ID"].Value.ToString();
+                    bool flag = UpAreaToYardByFlag(cbbCraneNo.Text.Trim(), id.ToString(), true);
+                    if (flag)
+                        MessageBox.Show(id + "配载方案打开成功");
+                    else
+                        MessageBox.Show(id + "配载方案打开失败");
 
-                GetCurrentTypeMessage();
-                ShiftDgvColorByFlag();
+                    GetCurrentTypeMessage();
+                    ShiftDgvColorByFlag();
+                }
             }
         }
 
@@ -785,7 +836,7 @@ namespace HMI_OF_CRANEORDERCONFIG
                 GetYradToCar(cbbCraneNo.Text.Trim());
             }
         }
-        
+
         #endregion
 
         private void cbbCraneNo_TextChanged(object sender, EventArgs e)

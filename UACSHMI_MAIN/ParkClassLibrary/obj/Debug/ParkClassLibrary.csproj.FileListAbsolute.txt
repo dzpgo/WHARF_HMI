@@ -87,9 +87,9 @@ E:\代码\码头库画面\wuliubu_chenpinmatou\UACSHMI_MAIN\ParkClassLibrary\obj
 E:\代码\码头库画面\wuliubu_chenpinmatou\UACSHMI_MAIN\ParkClassLibrary\obj\Debug\ParkClassLibrary.csproj.CopyComplete
 E:\代码\码头库画面\wuliubu_chenpinmatou\UACSHMI_MAIN\ParkClassLibrary\obj\Debug\ParkClassLibrary.dll
 E:\代码\码头库画面\wuliubu_chenpinmatou\UACSHMI_MAIN\ParkClassLibrary\obj\Debug\ParkClassLibrary.pdb
+E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\ParkClassLibrary\bin\Debug\IBM.Data.DB2.dll
 E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\ParkClassLibrary\bin\Debug\ParkClassLibrary.dll
 E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\ParkClassLibrary\bin\Debug\ParkClassLibrary.pdb
-E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\ParkClassLibrary\bin\Debug\IBM.Data.DB2.dll
 E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\ParkClassLibrary\obj\Debug\ParkClassLibrary.csproj.AssemblyReference.cache
 E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\ParkClassLibrary\obj\Debug\ParkClassLibrary.csproj.CoreCompileInputs.cache
 E:\代码\码头库\WHARF_HMI\UACSHMI_MAIN\ParkClassLibrary\obj\Debug\ParkClassLibrary.csproj.CopyComplete

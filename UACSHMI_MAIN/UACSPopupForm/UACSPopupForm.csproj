@@ -58,10 +58,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\IrisSkin2.dll</HintPath>
     </Reference>
-    <Reference Include="ParkClassLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\iPlature\SF_HOME\app\form\ParkClassLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -84,6 +80,12 @@
     </Compile>
     <Compile Include="CraneMonitor\FrmCraneConfig.designer.cs">
       <DependentUpon>FrmCraneConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CraneMonitor\FrmCraneConfigAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CraneMonitor\FrmCraneConfigAuthority.designer.cs">
+      <DependentUpon>FrmCraneConfigAuthority.cs</DependentUpon>
     </Compile>
     <Compile Include="CraneMonitor\FrmModeSwitchover.cs">
       <SubType>Form</SubType>
@@ -147,6 +149,9 @@
     <EmbeddedResource Include="CraneMonitor\FrmCraneConfig.resx">
       <DependentUpon>FrmCraneConfig.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CraneMonitor\FrmCraneConfigAuthority.resx">
+      <DependentUpon>FrmCraneConfigAuthority.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CraneMonitor\FrmModeSwitchover.resx">
       <DependentUpon>FrmModeSwitchover.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -181,6 +186,10 @@
     <None Include="Resources\bg_btn.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ParkClassLibrary\ParkClassLibrary.csproj">
+      <Project>{2ec69a15-9c22-4e66-8cd1-60eb77fbb252}</Project>
+      <Name>ParkClassLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UACSDAL\UACSDAL.csproj">
       <Project>{d3f6ff21-68b2-40e4-9d1c-603eb926c87c}</Project>
       <Name>UACSDAL</Name>
